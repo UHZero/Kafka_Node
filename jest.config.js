@@ -7,7 +7,7 @@ export default {
     clearMocks: true,
 
     collectCoverage: true,
-    collectCoverageFrom: ['<rootDir>api/src/**/services/*.js'],
+    collectCoverageFrom: ['<rootDir>/api/src/**/services/*.js'],
     coverageDirectory: 'coverage',
     coverageReporters: ['text-summary', 'lcov'],
     coverageProvider: 'v8',

@@ -10,7 +10,7 @@ export default class ProductsController {
 
         try {
             await CreateProductService.execute(name, value, available)
-                .then(response => res.status(204).json(response))
+                .then(response => res.status(204).json(response).end())
         } catch (e) {
             res.status(400).send(e.message)
         }
@@ -28,7 +28,7 @@ export default class ProductsController {
 
         try {
             await UpdateProductService(id, name, value, available)
-                .then(response => res.status(204).json(response))
+                .then(response => res.status(204).json(response).end())
         } catch (e) {
             res.status(400).send(e.message)
         }
@@ -39,7 +39,7 @@ export default class ProductsController {
         const { id } = req.params;
 
         try {
-            await RemoveProductService(id).then(response => res.status(204).json(response))
+            await RemoveProductService(id).then(response => res.status(204).json(response).end())
         } catch (e) {
             res.status(404).send(e.message)
         }
