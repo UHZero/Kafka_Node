@@ -18,7 +18,7 @@ export default class ProductsController {
     }
 
     static async listProduct(req, res) {
-        await ListProductsService().then(response => res.json(response))
+        await ListProductsService.execute().then(response => res.status(200).json(response).end())
     }
 
     static async updateProduct(req, res) {
@@ -27,10 +27,10 @@ export default class ProductsController {
         const { name, value, available } = req.body;
 
         try {
-            await UpdateProductService(id, name, value, available)
-                .then(response => res.status(204).json(response).end())
+            await UpdateProductService.execute(id, name, value, available)
+                .then(response => res.status(200).json(response).end())
         } catch (e) {
-            res.status(400).send(e.message)
+            res.status(404).send(e.message)
         }
 
     }
@@ -39,7 +39,7 @@ export default class ProductsController {
         const { id } = req.params;
 
         try {
-            await RemoveProductService(id).then(response => res.status(204).json(response).end())
+            await RemoveProductService.execute(id).then(response => res.status(204).json(response).end())
         } catch (e) {
             res.status(404).send(e.message)
         }

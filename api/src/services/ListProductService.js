@@ -1,7 +1,9 @@
 import ProductRepository from "../repository/ProductRepository.js"
 
-async function ListProductsService() {
-    return await ProductRepository.list().then(response => response);
+class ListProductsService {
+    static async execute() {
+        return await ProductRepository.list().then(response => response);
+    }
 };
 
 export default ListProductsService;

@@ -1,13 +1,16 @@
 import ProductRepository from "../repository/ProductRepository.js";
 
-async function RemoveProductService(id) {
+class RemoveProductService {
 
-    const product = await ProductRepository.show(id);
+    static async execute(id) {
+        const product = await ProductRepository.show(id);
 
-    if (!id || !product) {
-        throw new Error('Product not found!')
-    };
+        if (!id || !product) {
+            throw new Error('Product not found!')
+        };
 
-    await ProductRepository.delete(id);
+        await ProductRepository.delete(id);
+    }
+
 }
 export default RemoveProductService;
