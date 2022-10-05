@@ -13,3 +13,7 @@
 ## Now let's configure insomnia to use the services:
 
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Kafka-PDF%20API&uri=https%3A%2F%2Fraw.githubusercontent.com%2FUHZero%2FKafka_Node%2Fmain%2FInsomnia_2022-10-04.json)
+
+#### Trouble importing? I would suggest you try:
+
+["Import suceeded" but nothing changes](https://github.com/Kong/insomnia/issues/4274)
